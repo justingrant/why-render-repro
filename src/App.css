@@ -31,3 +31,100 @@
     transform: rotate(360deg);
   }
 }
+
+/* Top (two week) calendar */
+
+.top-calendar,
+.top-calendar-head,
+.top-calendar-body,
+.top-calendar-row {
+  width: 100%;
+}
+
+.top-calendar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.top-calendar .top-calendar-row ul {
+  border-width: 1px;
+}
+.top-calendar .big-date-day + .big-date-day {
+  border-left: 1px solid #ddd;
+}
+
+.top-calendar-row {
+  height: 54px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #ddd;
+}
+
+.top-calendar .big-date-day {
+  cursor: pointer !important;
+  background-color: #ccc;
+  border-collapse: collapse;
+  vertical-align: middle;
+}
+.top-calendar th {
+  height: 30px;
+}
+.top-calendar .big-date-day,
+.top-calendar th {
+  text-align: center;
+}
+.top-calendar thead,
+.top-calendar thead tr,
+.top-calendar thead tr th {
+  background-color: #bbd4be;
+  border-bottom: 1px solid #fff;
+  vertical-align: middle;
+}
+.top-calendar .big-date-today .big-date {
+  color: #a00;
+}
+.first-day-of-month .big-date-month-name {
+  font-size: 20px;
+}
+.first-day-of-month .big-date-month-name {
+  font-size: 18px;
+  height: 18px;
+  line-height: 25px;
+}
+.first-day-of-month .big-date-text {
+  font-size: 28px;
+  line-height: 38px;
+}
+
+.top-calendar .big-date-container {
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(300px);
+  scroll-snap-type: y mandatory;
+}
+
+.top-calendar .big-date {
+  height: 50px;
+  width: 50px;
+  vertical-align: middle;
+  font-size: 32px;
+  line-height: 50px;
+  display: inline-block;
+}
+@media (hover: hover) {
+  .top-calendar .big-date-day:hover .big-date {
+    background-color: #666;
+    border-radius: 25px;
+    color: #fff;
+  }
+  .top-calendar .big-date-day.big-date-today:hover .big-date {
+    background-color: #a00;
+    color: #fff;
+  }
+}
+
+.top-calendar .big-date-day.big-date-selected {
+  background-color: #fff;
+}
+.top-calendar .big-date-day.big-date-past .big-date {
+  color: #aaa;
+}
